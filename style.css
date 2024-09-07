@@ -1,3 +1,9 @@
 .tartalom{
     border: 1px;
 }
+
+footer{
+    margin: 1rem;
+    margin-top: 5rem ;
+    text-align: center;
+}

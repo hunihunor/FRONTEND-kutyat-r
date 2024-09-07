@@ -10,14 +10,22 @@ const kutya1 = {
   }
 
 let h1Elem = document.querySelector('header')
-h1Elem.innerHTML = ("<p>" + cim + "</p>")
+h1Elem.innerHTML += ("<p>" + cim + "</p>")
 
 function kutyaTartalomKiiras(aktualisKutya) {
     const tartalom = document.querySelector('.tartalom')
     const divKutya = document.createElement('div')
+    const gombElem = document.createElement('button')
 
+    gombElem.addEventListener('click', (event)=>{
+        
+        console.log(event.target);
+    })
+
+    gombElem.innerHTML = "Kiválaszt"
+    gombElem.classList.add("kivalaszt","btn", "btn-primary")
     divKutya.classList.add("col-lg-4", "col-md-6")
-    
+
     const nev = document.createElement('h3')
     nev.innerHTML = aktualisKutya.nev
     const kor = document.createElement('p')
@@ -28,6 +36,7 @@ function kutyaTartalomKiiras(aktualisKutya) {
     divKutya.appendChild(nev)
     divKutya.appendChild(kor)
     divKutya.appendChild(nem)
+    divKutya.appendChild(gombElem)
     tartalom.appendChild(divKutya)
 }
 
